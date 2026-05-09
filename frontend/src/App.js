@@ -2,23 +2,28 @@ import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import chestXrayImage from './assets/chest-xray.png';
 
+const typingTexts = [
+
+  'AI-Powered Tuberculosis Detection',
+
+  'Deep Learning Chest X-ray Analysis',
+
+  'Real-Time AI Diagnostic Assistance',
+
+  'DenseNet121 Medical Imaging System',
+
+];
+
 export default function App() {
   const fileInputRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [prediction, setPrediction] = useState(null);
   const [confidence, setConfidence] = useState(null);
-  const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
   const [heatmapUrl, setHeatmapUrl] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const typingTexts = [
-    'AI-Powered Tuberculosis Detection',
-    'Deep Learning Chest X-ray Analysis',
-    'Real-Time AI Diagnostic Assistance',
-    'DenseNet121 Medical Imaging System',
-  ];
 
   const [displayText, setDisplayText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
@@ -85,7 +90,6 @@ export default function App() {
     setError('');
     setPrediction(null);
     setConfidence(null);
-    setUploadedImageUrl(null);
     setHeatmapUrl(null);
 
     try {
@@ -102,7 +106,6 @@ export default function App() {
 
       setPrediction(data.prediction);
       setConfidence(data.confidence);
-      setUploadedImageUrl(data.uploaded_image_url);
       setHeatmapUrl(data.heatmap_url);
     } catch (err) {
       setError(err.message || 'Unable to connect to the prediction server.');
