@@ -72,7 +72,6 @@ export default function App() {
     setPreviewUrl(URL.createObjectURL(file));
     setPrediction(null);
     setConfidence(null);
-    setUploadedImageUrl(null);
     setHeatmapUrl(null);
     setError('');
   };
