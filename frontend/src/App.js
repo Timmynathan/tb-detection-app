@@ -119,23 +119,21 @@ export default function App() {
 
       <nav className="navbar">
         <div className="brand">
-          <div className="logo">⌁</div>
           <div>
-            <h1>TB Detect AI</h1>
-            <span>Chest X-ray Screening Assistant</span>
+            <h1>TBDetect</h1>
           </div>
         </div>
 
         <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#home">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
         </div>
       </nav>
 
       <section className="hero" id="home">
         <div className="hero-content">
-          <div className="lung-icon">🩺</div>
+          {/* <div className="lung-icon">🩺</div> */}
 
           <h2 className="typing-heading">
             {displayText}
