@@ -1,9 +1,19 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
+os.environ["OMP_NUM_THREADS"] = "1"
+
+os.environ["TF_NUM_INTRAOP_THREADS"] = "1"
+
+os.environ["TF_NUM_INTEROP_THREADS"] = "1"
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-import os
 import cv2
 from werkzeug.utils import secure_filename
 
