@@ -92,7 +92,7 @@ export default function App() {
     setHeatmapUrl(null);
 
     try {
-      const response = await fetch('https://tb-detection-app-qjax.onrender.com', {
+      const response = await fetch('https://tb-detection-app-qjax.onrender.com/predict', {
         method: 'POST',
         body: formData,
       });
